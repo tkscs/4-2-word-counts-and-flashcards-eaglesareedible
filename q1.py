@@ -1,3 +1,4 @@
+import string
 text = """
 Belong
 Kehillah commits to creating and holding a welcoming space for all students to
@@ -28,15 +29,30 @@ change in their communities and beyond.
 # values are the number of times each word appears. Print the dicitonary.
 
 # 1. Remove all new lines and punctuation, and convert to all lowercase.
-#### YOUR CODE HERE
+newtext = ""
+text.lower()
+for i in text:
+    if i in string.ascii_letters:
+        newtext+=i
+    elif i == " ":
+        newtext+=i
+    elif i == "\n":
+        newtext += " "
 
 # 2. Use the `.split()` method to split into a list of words.
 #### YOUR CODE HERE
+newtext = newtext.split(' ')
 
 # 3. Initialize an empty dictionary to keep track of word counts.
 #### YOUR CODE HERE
-
+dictionary={}
 # 4. loop through the list of words and update the dictionary. If the word is
 # already a key in the dicitonary, increment the count. If not, add the new key
 # with a count of 1.
 #### YOUR CODE HERE
+for b in newtext:
+    if b in dictionary:
+        dictionary[b] += 1
+    else:
+        dictionary[b] =1
+print(dictionary)
